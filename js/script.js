@@ -7,7 +7,7 @@
 "use strict";
 
 // User configurable.
-const ROM_FILENAME = "rom/game.gb";
+const ROM_FILENAME = "rom/game.gbc";
 const ENABLE_REWIND = true;
 const ENABLE_PAUSE = false;
 const ENABLE_SWITCH_PALETTES = true;
@@ -113,7 +113,7 @@ class VM {
     let oldPaused = this.paused_;
     this.paused_ = newPaused;
     if (!emulator) return;
-    if (newPaused == oldPaused) return;
+    if (newPaused === oldPaused) return;
     if (newPaused) {
       emulator.pause();
       this.ticks = emulator.ticks;
